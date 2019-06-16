@@ -23,7 +23,7 @@ public class LibrarySpringAopJpaTrainingApplication {
         repo.add(new Book("2345678901234", "Druga", "Drugi autor"));
         repo.add(new Book("3456789012345", "Trzecia", "Trzeci autor"));
         try {
-        repo.add(new Book("123", "Trzecia", "Trzeci autor"));
+        repo.add(new Book(null, "Trzecia", "Trzeci autor"));
         }catch (Exception ex){
             ex.getMessage();
         }

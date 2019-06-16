@@ -1,4 +1,4 @@
-package pl.lucky.libraryspringaopjpatraining.aspects;
+package pl.lucky.libraryspringaopjpatraining.service.aspects;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -11,7 +11,7 @@ import java.time.Instant;
 @Component
 public class TimeLoggerAspect {
 
-    @Around("execution(* pl.lucky.libraryspringaopjpatraining.service.BookRepository.*(..))")
+    @Around("pl.lucky.libraryspringaopjpatraining.service.aspects.AspectUtil.allBookRepositoryMethods()")
     public Object measuerExecTime(ProceedingJoinPoint pjp) throws Throwable {
         Instant before = Instant.now();
 //            @Before
